@@ -1,22 +1,36 @@
 import React from "react";
 import imgSrc from "../assets/signupleftimage.png";
 
-const LogInPage: React.FC = () => {
+const SignupPage: React.FC = () => {
   return (
     <div className="flex h-screen">
       {/* Image Column */}
-      <div className="w-1/2 bg-blue-500">
+      <div className="w-1/2 bg-black">
         <img
           src={imgSrc}
-          alt="EventElevate Login"
+          alt="EventElevate Signup"
           className="object-cover w-full h-full"
         />
       </div>
 
-      {/* Login Form Column */}
+      {/* Signup Form Column */}
       <div className="w-1/2 bg-white p-10">
-        <h2 className="text-3xl font-bold mb-6">Welcome Back</h2>
+        <h2 className="text-3xl font-bold mb-6">Join EventElevate</h2>
         <form>
+          {/* Name Field */}
+          <div className="mb-4">
+            <label htmlFor="name" className="block font-medium mb-1">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
           {/* Email Field */}
           <div className="mb-4">
             <label htmlFor="email" className="block font-medium mb-1">
@@ -31,8 +45,8 @@ const LogInPage: React.FC = () => {
             />
           </div>
 
-          {/* Password Field */}
-          <div className="mb-6">
+          {/* Password Fields */}
+          <div className="mb-4">
             <label htmlFor="password" className="block font-medium mb-1">
               Password
             </label>
@@ -44,29 +58,41 @@ const LogInPage: React.FC = () => {
               required
             />
           </div>
+          <div className="mb-6">
+            <label htmlFor="confirmPassword" className="block font-medium mb-1">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
 
-          {/* Log In Button */}
+          {/* Sign Up Button */}
           <button
             type="submit"
             className="w-full bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring"
           >
-            Log In
+            Sign Up
           </button>
         </form>
 
-        {/* Social Media Log In */}
+        {/* Social Media Sign Up */}
         <div className="mt-4">
           <button className="bg-red-500 text-white rounded py-2 px-4 hover:bg-red-600">
-            Log In with Google
+            Sign Up with Google
           </button>
         </div>
 
-        {/* New User */}
+        {/* Already Have an Account */}
         <div className="mt-4">
           <p>
-            New user?{" "}
-            <a href="/signup" className="text-blue-500 hover:underline">
-              Sign Up
+            Already have an account?{" "}
+            <a href="/login" className="text-blue-500 hover:underline">
+              Log In
             </a>
           </p>
         </div>
@@ -75,4 +101,4 @@ const LogInPage: React.FC = () => {
   );
 };
 
-export default LogInPage;
+export default SignupPage;
